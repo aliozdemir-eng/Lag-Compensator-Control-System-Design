@@ -75,6 +75,74 @@ The lag compensator shifts the system response by increasing the low-frequency g
 
 ---
 
+## Quantitative Performance Analysis
+
+In addition to theoretical and simulation-based analysis, the effect of the lag compensator was also evaluated quantitatively.
+
+The main objective of the compensator was to **reduce steady-state error while maintaining system stability**.
+
+### Steady-State Error Calculation
+
+The steady-state error for a ramp input is defined as:
+
+e_ss = 1 / Kv
+
+where Kv is the velocity error constant.
+
+For the uncompensated system:
+
+Kv_uncompensated = 3.1  
+e_ss_uncompensated = 1 / 3.1  
+e_ss_uncompensated ≈ 0.32
+
+After introducing the lag compensator, the low-frequency gain increased:
+
+Kv_compensated = 20  
+e_ss_compensated = 1 / 20  
+e_ss_compensated = 0.05
+
+### Error Reduction
+
+The improvement achieved by the lag compensator is:
+
+Error Reduction = (0.32 − 0.05) / 0.32
+
+Error Reduction ≈ 0.84
+
+This corresponds to approximately:
+
+**84% reduction in steady-state error**
+
+---
+
+### Numerical Performance Comparison
+
+| Performance Metric | Uncompensated System | Lag Compensated System |
+|--------------------|---------------------|------------------------|
+| Velocity Constant Kv | 3.1 | 20 |
+| Steady-State Error | 0.32 | 0.05 |
+| Error Reduction | — | 84% |
+| Tracking Accuracy | Limited | Significantly Improved |
+
+---
+
+### Interpretation of Results
+
+The lag compensator successfully increases the system's low-frequency gain while keeping the transient response within acceptable limits.
+
+As a result:
+
+• steady-state error is significantly reduced  
+• ramp tracking performance is improved  
+• overall system accuracy increases  
+
+Both **MATLAB/Simulink simulations** and **LTspice circuit simulations** confirm these theoretical predictions.
+
+Furthermore, the experimental hardware tests conducted in the laboratory environment showed behavior consistent with the simulation results.
+
+This confirms that the designed lag compensator is effective not only in theory but also in real physical implementation.
+---
+
 # MATLAB / Simulink Modeling
 
 The control system was first modeled and simulated in **MATLAB / Simulink**.
